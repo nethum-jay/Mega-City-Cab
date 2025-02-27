@@ -8,6 +8,12 @@
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
+<%
+    HttpSession sessionObj = request.getSession(false);
+    if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
+        response.sendRedirect("login.jsp?error=Please login first");
+    }
+%>
 
 <html>
     <head>
@@ -31,6 +37,12 @@
 
         <div class="container back-img text-center text-success">  
             <h1>Welcome to Mega City Cab service</h1>
+        </div>
+        
+        <div class="container mt-4">
+            <h2>Welcome, <%= sessionObj.getAttribute("userName") %>!</h2>
+            <p>You are logged in as <%= sessionObj.getAttribute("userEmail") %>.</p>
+            <a href="LogoutServlet" class="btn btn-danger">Logout</a>
         </div>
         
          <div class="row mt-4">

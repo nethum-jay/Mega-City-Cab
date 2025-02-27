@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("userEmail", email);
                 session.setAttribute("userName", rs.getString("name"));
                 
-                response.sendRedirect("dashboard.jsp"); // Redirect to the dashboard
+                response.sendRedirect("index.jsp"); // Redirect to the dashboard
             } else {
                 // Invalid credentials
                 response.sendRedirect("login.jsp?error=Invalid Email or Password");

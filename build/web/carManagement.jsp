@@ -37,7 +37,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
 
                         String query = "SELECT * FROM cars";
                         PreparedStatement pst = con.prepareStatement(query);

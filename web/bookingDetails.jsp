@@ -6,6 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
+
+<%
+    HttpSession sessionObj = request.getSession(false);
+    if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
+        response.sendRedirect("login.jsp?error=Please login first");
+    }
+    
+    String userEmail = (String) sessionObj.getAttribute("userEmail");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,8 +41,41 @@
                 </tr>
             </thead>
             <tbody>
+                                <%
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
 
+                        String query = "SELECT id, pickup, dropoff, pickup_time, vehicle_type, status FROM bookings WHERE user_email = ? ORDER BY pickup_time DESC";
+                        PreparedStatement pst = con.prepareStatement(query);
+                        pst.setString(1, userEmail);
+                        ResultSet rs = pst.executeQuery();
 
+                        while (rs.next()) {
+                %>
+                <tr>
+                    <td><%= rs.getInt("id") %></td>
+                    <td><%= rs.getString("pickup") %></td>
+                    <td><%= rs.getString("dropoff") %></td>
+                    <td><%= rs.getString("pickup_time") %></td>
+                    <td><%= rs.getString("vehicle_type") %></td>
+                    <td>
+                        <% if (rs.getString("status").equals("Completed")) { %>
+                            <span class="badge bg-success">Completed</span>
+                        <% } else if (rs.getString("status").equals("Upcoming")) { %>
+                            <span class="badge bg-primary">Upcoming</span>
+                        <% } else { %>
+                            <span class="badge bg-danger">Canceled</span>
+                        <% } %>
+                    </td>
+                </tr>
+                <%
+                        }
+                        con.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
             </tbody>
         </table>
         <div class="text-center">
