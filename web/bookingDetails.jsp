@@ -19,9 +19,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>My Bookings - Mega City Cab</title>
+        <title>Bookings - Mega City Cab</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <%@include file="component/allCss.jsp"%>
+        
 </head>
 <body>
      <%@include file="component/navabr.jsp" %>
@@ -41,10 +42,10 @@
                 </tr>
             </thead>
             <tbody>
-                                <%
+                <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
 
                         String query = "SELECT id, pickup, dropoff, pickup_time, vehicle_type, status FROM bookings WHERE user_email = ? ORDER BY pickup_time DESC";
                         PreparedStatement pst = con.prepareStatement(query);

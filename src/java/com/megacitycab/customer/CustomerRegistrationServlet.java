@@ -27,7 +27,7 @@ public class CustomerRegistrationServlet extends HttpServlet {
         try {
             // Database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
 
             // Insert customer details
             String query = "INSERT INTO customers (name, address, nic, phone, email, password) VALUES (?, ?, ?, ?, ?, ?)";

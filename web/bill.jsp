@@ -35,7 +35,8 @@
 
         <table class="table table-striped">
             <thead class="table-striped">
-             <th>Booking ID</th>
+                 <tr>
+                    <th>Booking ID</th>
                     <th>Pickup</th>
                     <th>Drop-off</th>
                     <th>Distance (km)</th>
