@@ -8,12 +8,7 @@
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
-<%
-    HttpSession sessionObj = request.getSession(false);
-    if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
-        response.sendRedirect("login.jsp?error=Please login first");
-    }
-%>
+
 
 <html>
     <head>
@@ -34,16 +29,13 @@
     </head>
     <body>
         <%@include file="component/navabr.jsp" %>
-
-        <div class="container back-img text-center text-success">  
-            <h1>Welcome to Mega City Cab service</h1>
-        </div>
         
-        <div class="container mt-4">
-            <h2>Welcome, <%= sessionObj.getAttribute("userName") %>!</h2>
-            <p>You are logged in as <%= sessionObj.getAttribute("userEmail") %>.</p>
-            <a href="LogoutServlet" class="btn btn-danger">Logout</a>
-        </div>
+    <div class="container back-img text-center text-success">
+        <h2>Welcome to Mega City Cab Booking System</h2>
+        <p>Use the navigation bar to access features.</p>
+    </div>
+        
+
         
          <div class="row mt-4">
             <!-- Book a Ride -->
@@ -104,6 +96,21 @@
             </div>
         </div>
         
-        <%--<%@include file="component/footer.jsp" %>--%>    
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                        📞 Contact Support
+                </h2>
+                    <ul>
+                        <li>📧 Email: support@megacitycab.com</li>
+                        <li>📞 Phone: +94 112 687 189</li>
+                        <li>🏢 Visit: Mega City Cab, Colombo 01, Sri Lanka</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <%@include file="component/footer.jsp" %>
+        
     </body>
 </html>

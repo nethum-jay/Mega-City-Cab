@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-
+@WebServlet("/BookingServlet")
 public class BookingServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class BookingServlet extends HttpServlet {
         try {
             // Database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
             // Insert booking details
             String query = "INSERT INTO bookings (user_email, pickup, dropoff, pickup_time, vehicle_type, phone) VALUES (?, ?, ?, ?, ?, ?)";

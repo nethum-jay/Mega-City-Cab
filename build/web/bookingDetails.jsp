@@ -26,18 +26,19 @@
 </head>
 <body>
      <%@include file="component/navabr.jsp" %>
+     
     <div class="container mt-4">
         <h2 class="text-center">My Bookings 📅</h2>
         <p class="text-center text-muted">View your past and upcoming bookings.</p>
 
-        <table class="table table-striped">
-            <thead>
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
                 <tr>
                     <th>Booking ID</th>
-                    <th>Pickup Location</th>
-                    <th>Destination</th>
-                    <th>Date</th>
-                    <th>Time</th>
+                    <th>Pickup</th>
+                    <th>Drop-off</th>
+                    <th>Pickup Time</th>
+                    <th>Vehicle Type</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -45,7 +46,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
                         String query = "SELECT id, pickup, dropoff, pickup_time, vehicle_type, status FROM bookings WHERE user_email = ? ORDER BY pickup_time DESC";
                         PreparedStatement pst = con.prepareStatement(query);
@@ -79,8 +80,9 @@
                 %>
             </tbody>
         </table>
+
         <div class="text-center">
-            <a href="index.jsp" class="btn btn-secondary">Back to Home</a>
+            <a href="index.jsp" class="btn btn-secondary">Back to Dashboard</a>
         </div>
     </div>
 </body>

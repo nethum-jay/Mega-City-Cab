@@ -37,6 +37,7 @@
                 <a href="addDriver.jsp" class="btn btn-primary">+ Add New Driver</a>
             </div>
         <% } %>
+        
         <table class="table table-bordered table-hover mt-3">
             <thead class="table-dark">
                 <tr>

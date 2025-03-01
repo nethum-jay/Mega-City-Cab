@@ -30,6 +30,7 @@
 
         <div class="row">
             <div class="col-md-6 offset-md-3">
+                
                 <% String message = request.getParameter("message"); %>
                 <% if (message != null) { %>
                     <p class="text-success text-center"><%= message %></p>
@@ -54,11 +55,13 @@
                     <div class="mb-3">
                         <label class="form-label">Vehicle Type</label>
                         <select name="vehicleType" class="form-control">
-                            <option value="Sedan">Sedan</option>
-                            <option value="SUV">SUV</option>
+                            <option value="Mini_Car">Mini Car</option>
+                            <option value="Hatchback_Car">Hatchback Car</option>                          
+                            <option value="Premium_Car">Premium Car</option>                            
                             <option value="Van">Van</option>
+                            <option value="Mini_Bus">Mini Bus</option>
                         </select>
-                    </div>
+                    </div>s
 
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>

@@ -31,13 +31,13 @@
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="carManagement.jsp"><i class="fa-solid fa-car-rear"></i>
+        <a class="nav-link" href="cars.jsp"><i class="fa-solid fa-car-rear"></i>
             Cars</a>
           
       </li>
       
             <li class="nav-item active">
-        <a class="nav-link" href="driverManagement.jsp"><i class="fa-solid fa-people-roof"></i>
+        <a class="nav-link" href="drivers.jsp"><i class="fa-solid fa-people-roof"></i>
            Drivers</a>
       </li>
       

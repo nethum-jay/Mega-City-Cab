@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
+@WebServlet("/BillingServlet")
 public class BillingServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -24,13 +25,14 @@ public class BillingServlet extends HttpServlet {
         double perKmRate = 1.5; 
         double taxRate = 0.1; 
         double discount = distance > 10 ? 5.0 : 0.0; 
+        
         double fare = baseFare + (distance * perKmRate);
         double tax = fare * taxRate;
         double totalFare = fare + tax - discount;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
             String query = "INSERT INTO billing (booking_id, user_email, distance, base_fare, tax, discount, total_fare) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = con.prepareStatement(query);

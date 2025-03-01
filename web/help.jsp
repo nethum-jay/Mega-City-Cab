@@ -21,7 +21,6 @@
     </head>
     <body>
         
-        <%-- Include Navbar --%>
         <%@include file="component/navabr.jsp" %>
         
         <div class="container mt-4">

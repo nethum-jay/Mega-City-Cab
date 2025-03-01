@@ -19,6 +19,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Available Cars</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         
         <%@include file="component/allCss.jsp"%>
         
@@ -26,9 +27,11 @@
     <body>
         
         <%@include file="component/navabr.jsp" %>
+        
         <div class="container mt-4">
         <h2 Class="text-center">🚖 Available Cars</h2>
-        <p class="text-center text-muted">Here is a list of available cars for booking.</p>
+          <p class="text-center text-muted">View the available cars in the Mega City Cab fleet.</p>
+
 
         <% if ("manager".equals(userRole)) { %>
             <div class="text-end">
@@ -54,7 +57,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
                         String query = "SELECT id, model, type, number_plate, capacity, availability FROM cars";
                         PreparedStatement pst = con.prepareStatement(query);

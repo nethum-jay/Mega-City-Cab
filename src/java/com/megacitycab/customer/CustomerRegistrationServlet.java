@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
+
 @WebServlet("/CustomerRegistrationServlet")
 public class CustomerRegistrationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -27,7 +29,7 @@ public class CustomerRegistrationServlet extends HttpServlet {
         try {
             // Database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
             // Insert customer details
             String query = "INSERT INTO customers (name, address, nic, phone, email, password) VALUES (?, ?, ?, ?, ?, ?)";
@@ -50,6 +52,8 @@ public class CustomerRegistrationServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("register.jsp?error=Database error");
+            
+            
         }
     }
 }

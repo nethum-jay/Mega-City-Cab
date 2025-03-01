@@ -27,6 +27,7 @@
         </condition>
     </fail>
     <target depends="dist,javadoc" description="Build whole project." name="default"/>
+	
     <!--
                 INITIALIZATION SECTION
             -->

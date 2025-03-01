@@ -16,13 +16,16 @@
         
     </head>
     <body class="bg-light">
-        <%@include file="component/navabr.jsp" %>       
+        <%@include file="component/navabr.jsp" %>     
+        
             <div class="container mt-5">
                 <h2 class="text-center">Customer Login</h2>
+                
                 <% String error = request.getParameter("error"); %>
                 <% if (error != null) { %>
                     <p class="text-danger text-center"><%= error %></p>
                 <% } %>
+                
                 <form action="LoginServlet" method="post" class="p-4 bg-white shadow rounded">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
