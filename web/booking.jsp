@@ -61,7 +61,7 @@
                             <option value="Van">Van</option>
                             <option value="Mini_Bus">Mini Bus</option>
                         </select>
-                    </div>s
+                    </div>
 
                     <div class="mb-3">
                         <label class="form-label">Phone Number</label>

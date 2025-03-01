@@ -15,6 +15,7 @@
     
     String userEmail = (String) sessionObj.getAttribute("userEmail");
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,6 +44,7 @@
                 </tr>
             </thead>
             <tbody>
+                
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -55,6 +57,7 @@
 
                         while (rs.next()) {
                 %>
+                
                 <tr>
                     <td><%= rs.getInt("id") %></td>
                     <td><%= rs.getString("pickup") %></td>
@@ -71,6 +74,7 @@
                         <% } %>
                     </td>
                 </tr>
+                
                 <%
                         }
                         con.close();
@@ -78,6 +82,7 @@
                         e.printStackTrace();
                     }
                 %>
+                
             </tbody>
         </table>
 

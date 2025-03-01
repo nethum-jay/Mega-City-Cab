@@ -26,11 +26,13 @@
                 width: 100%;
             }
         </style>
+
+        
     </head>
     <body>
         <%@include file="component/navabr.jsp" %>
         
-    <div class="container back-img text-center text-success">
+    <div class="back-img text-center text-success">
         <h2>Welcome to Mega City Cab Booking System</h2>
         <p>Use the navigation bar to access features.</p>
     </div>
@@ -105,10 +107,9 @@
                         <li>📞 Phone: +94 112 687 189</li>
                         <li>🏢 Visit: Mega City Cab, Colombo 01, Sri Lanka</li>
                     </ul>
-                    </div>
-                </div>
             </div>
-        </div>
+
+        
         
         <%@include file="component/footer.jsp" %>
         
