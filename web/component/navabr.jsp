@@ -1,4 +1,4 @@
-<nav class=" text-center navbar navbar-expand-lg navbar navbar-dark bg-dark p-1">
+<nav class=" text-center navbar navbar-expand-lg navbar navbar-dark bg-dark p-2">
     <!--<nav class="navbar navbar-dark bg-dark">-->
 <!--        <div class="container-fluid">-->
 <!--            <span class="navbar-brand">-->
@@ -13,38 +13,39 @@
     <ul class="navbar-nav mr-auto">
         
       <li class="nav-item active">
-        <a class="nav-link" href="index.jsp"><i class="fa-duotone fa-solid fa-house fa-2xl" style="--fa-primary-color: #FFD43B; --fa-secondary-color: #FFD43B;"></i>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp"><i class="fa-duotone fa-solid fa-house fa-2xl"></i>  
+            <h5> Home </h5><span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link "href="booking.jsp "><i class="fa-solid fa-table-list"></i>
-            Book a Cab</a>
+        <a class="nav-link "href="booking.jsp "><i class="fa-solid fa-table-list fa-2xl"></i>
+            <h5> Book a Cab </h5></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="bookingDetails.jsp"><i class="fa-solid fa-eye"></i>
-            My Bookings</a>
+        <a class="nav-link" href="bookingDetails.jsp"><i class="fa-solid fa-eye fa-2xl"></i>
+             <h5> My Bookings </h5></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="bill.jsp"><i class="fa-solid fa-file-invoice"></i>
-            Billing</a>
+        <a class="nav-link" href="bill.jsp"><i class="fa-solid fa-file-invoice fa-2xl"></i>
+             <h5> Billing </h5></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="cars.jsp"><i class="fa-solid fa-car-rear"></i>
-            Cars</a>
+        <a class="nav-link" href="cars.jsp"><i class="fa-solid fa-car-rear fa-2xl"></i>
+            <h5> Cars </h5></a>
           
       </li>
       
             <li class="nav-item active">
-        <a class="nav-link" href="drivers.jsp"><i class="fa-solid fa-people-roof"></i>
-           Drivers</a>
+        <a class="nav-link" href="drivers.jsp"><i class="fa-solid fa-people-roof fa-2xl"></i>
+            <h5> Drivers </h5></a>
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="help.jsp"><i class="fa-solid fa-circle-info"></i>
-            Help</a>
+        <a class="nav-link" href="help.jsp"><i class="fa-solid fa-circle-info fa-2xl"></i>
+             <h5> Help </h5></a>
       </li>
       
     </ul>
