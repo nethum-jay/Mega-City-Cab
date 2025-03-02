@@ -14,38 +14,37 @@
         
       <li class="nav-item active">
         <a class="nav-link" href="index.jsp"><i class="fa-duotone fa-solid fa-house fa-2xl"></i>  
-            <h5> Home </h5><span class="sr-only">(current)</span></a>
+           Home <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">
         <a class="nav-link "href="booking.jsp "><i class="fa-solid fa-table-list fa-2xl"></i>
-            <h5> Book a Cab </h5></a>
+           Book a Cab </a>
       </li>
       
       <li class="nav-item active">
         <a class="nav-link" href="bookingDetails.jsp"><i class="fa-solid fa-eye fa-2xl"></i>
-             <h5> My Bookings </h5></a>
+           My Bookings</a>
       </li>
       
       <li class="nav-item active">
         <a class="nav-link" href="bill.jsp"><i class="fa-solid fa-file-invoice fa-2xl"></i>
-             <h5> Billing </h5></a>
+           Billing </a>
       </li>
       
       <li class="nav-item active">
         <a class="nav-link" href="cars.jsp"><i class="fa-solid fa-car-rear fa-2xl"></i>
-            <h5> Cars </h5></a>
-          
+           Cars </a>   
       </li>
       
             <li class="nav-item active">
         <a class="nav-link" href="drivers.jsp"><i class="fa-solid fa-people-roof fa-2xl"></i>
-            <h5> Drivers </h5></a>
+           Drivers </a>
       </li>
       
       <li class="nav-item active">
         <a class="nav-link" href="help.jsp"><i class="fa-solid fa-circle-info fa-2xl"></i>
-             <h5> Help </h5></a>
+             Help </a>
       </li>
       
     </ul>
