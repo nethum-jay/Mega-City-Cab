@@ -14,7 +14,7 @@
 </head>
 <body>
 
-
+    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
@@ -29,12 +29,11 @@
             <thead class="table-dark">
                 <tr>
                     <th>Booking ID</th>
-                    <th>Customer Name</th>
                     <th>Pickup</th>
-                    <th>Destination</th>
-                    <th>Fare (LKR)</th>
+                    <th>Drop-off</th>
+                    <th>Pickup Time</th>
+                    <th>Vehicle Type</th>
                     <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,10 +51,10 @@
                 %>
                 <tr>
                     <td><%= rs.getInt("id") %></td>
-                    <td><%= rs.getString("name") %></td>
                     <td><%= rs.getString("pickup") %></td>
-                    <td><%= rs.getString("destination") %></td>
-                    <td><%= rs.getDouble("fare") %></td>
+                    <td><%= rs.getString("dropoff") %></td>
+                    <td><%= rs.getString("pickup_time") %></td>
+                    <td><%= rs.getDouble("vehicle_type") %></td>
                     <td><%= rs.getString("status") %></td>
                     <td>
                         <form action="UpdateBookingServlet" method="post" style="display:inline;">

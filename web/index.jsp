@@ -19,7 +19,7 @@
         
         <style type="text/css">
             .back-img{
-                background: url(img/background.jpg);
+                background: url(img/background_1.jpg);
                 width: 100%;
                 height:80vh;
                 background-repeat: no-repeat;
