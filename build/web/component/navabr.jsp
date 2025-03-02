@@ -1,8 +1,9 @@
-<nav class=" text-center navbar navbar-expand-lg navbar navbar-dark bg-dark p-4">
-  <div class="container">
-  <a class="navbar-brand" href="index.jsp"> 
+<nav class=" text-center navbar navbar-expand-lg navbar navbar-dark bg-dark p-1">
+    <!--<nav class="navbar navbar-dark bg-dark">-->
+<!--        <div class="container-fluid">-->
+<!--            <span class="navbar-brand">-->
     <img src="img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-    Mega City Cab
+               <div class="mx-auto" style="width: 700px;"> <h1 class="mb-2 bg-dark text-white"> Mega City Cab </h1>></div>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,7 +13,7 @@
     <ul class="navbar-nav mr-auto">
         
       <li class="nav-item active">
-        <a class="nav-link" href="index.jsp"><i class="fa-solid fa-house"></i>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.jsp"><i class="fa-duotone fa-solid fa-house fa-2xl" style="--fa-primary-color: #FFD43B; --fa-secondary-color: #FFD43B;"></i>Home<span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">

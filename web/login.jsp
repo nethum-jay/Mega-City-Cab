@@ -11,14 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer Login</title>
         
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+       
         <%@include file="component/allCss.jsp"%>
         
     </head>
     <body class="bg-light">
         
-        <%@include file="component/navabr.jsp" %>     
+        <%@include file="component/navabr.jsp" %> 
         
             <div class="container mt-5">
                 <h2 class="text-center">Customer Login</h2>
@@ -44,6 +44,7 @@
                 <p class="text-center mt-3">Don't have an account? <a href="register.jsp">Register</a></p>
             </div>
                 
-        <%--<%@include file="component/footer.jsp"%>--%>       
+        <%@include file="component/footer.jsp"%>  
+        
     </body>
 </html>

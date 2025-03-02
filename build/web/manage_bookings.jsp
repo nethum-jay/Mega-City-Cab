@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
