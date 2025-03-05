@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%@ page import="java.sql.*" %>
 <html>
@@ -14,7 +15,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
@@ -43,7 +43,7 @@
                     ResultSet rs = null;
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
                         stmt = con.createStatement();
                         rs = stmt.executeQuery("SELECT b.id, c.name, b.pickup, b.destination, b.fare, b.status FROM Bookings b JOIN Customers c ON b.customer_id = c.id");
 

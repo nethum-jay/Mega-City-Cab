@@ -26,7 +26,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th><th>Name</th><th>Phone</th><th>Actions</th>
+                    <th>Full Name</th><th>Address</th><th>NIC (National ID)</th><th>Phone Number</th><th>Email</th><th>Password</th>
                 </tr>
             </thead>
             <tbody>
