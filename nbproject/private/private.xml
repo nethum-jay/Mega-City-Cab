@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_dashboard.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/megacitycab/admin/AdminLoginServlet.java</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/megacitycab/admin/AdminLogoutServlet.java</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_login.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/manage_customers.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/manage_bookings.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/UpdateBookingServlet.java</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/DeleteBookingServlet.java</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/META-INF/context.xml</file>
+        </group>
     </open-files>
 </project-private>

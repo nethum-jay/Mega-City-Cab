@@ -7,16 +7,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
+<%
+    HttpSession sessionObj = request.getSession(false);
+    if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
+        response.sendRedirect("admin_login.jsp");
+    }
+%>
+
 <html>
 <head>
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
-    <%@include file="component/allCss.jsp"%>    
+         <%@include file="component/allCss.jsp"%>    
     
 </head>
 <body>
-
+    <%-- Navbar --%>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Mega City Cab - Admin Panel</span>

@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%@ page import="java.sql.*" %>
 <html>
@@ -15,6 +14,7 @@
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
@@ -29,11 +29,12 @@
             <thead class="table-dark">
                 <tr>
                     <th>Booking ID</th>
+                    <th>Customer Name</th>
                     <th>Pickup</th>
-                    <th>Drop-off</th>
-                    <th>Pickup Time</th>
-                    <th>Vehicle Type</th>
+                    <th>Destination</th>
+                    <th>Fare (LKR)</th>
                     <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +44,7 @@
                     ResultSet rs = null;
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
+                        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
                         stmt = con.createStatement();
                         rs = stmt.executeQuery("SELECT b.id, c.name, b.pickup, b.destination, b.fare, b.status FROM Bookings b JOIN Customers c ON b.customer_id = c.id");
 
@@ -51,10 +52,10 @@
                 %>
                 <tr>
                     <td><%= rs.getInt("id") %></td>
+                    <td><%= rs.getString("name") %></td>
                     <td><%= rs.getString("pickup") %></td>
-                    <td><%= rs.getString("dropoff") %></td>
-                    <td><%= rs.getString("pickup_time") %></td>
-                    <td><%= rs.getDouble("vehicle_type") %></td>
+                    <td><%= rs.getString("destination") %></td>
+                    <td><%= rs.getDouble("fare") %></td>
                     <td><%= rs.getString("status") %></td>
                     <td>
                         <form action="UpdateBookingServlet" method="post" style="display:inline;">

@@ -11,7 +11,8 @@
     <title>Manage Customers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
-            <%@include file="component/allCss.jsp"%>
+    <%@include file="component/allCss.jsp"%>   
+    
     
 </head>
 <body>
@@ -26,7 +27,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Full Name</th><th>Address</th><th>NIC (National ID)</th><th>Phone Number</th><th>Email</th><th>Password</th>
+                    <th>ID</th><th>Name</th><th>Phone</th><th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,4 +37,3 @@
     </div>
 </body>
 </html>
-
