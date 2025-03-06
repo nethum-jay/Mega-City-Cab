@@ -46,14 +46,13 @@ public class CustomerRegistrationServlet extends HttpServlet {
 
             if (rowsAffected > 0) {
                 response.sendRedirect("registerSuccess.jsp");
+                
             } else {
                 response.sendRedirect("register.jsp?error=Registration failed");
             }
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("register.jsp?error=Database error");
-            
-            
         }
     }
 }

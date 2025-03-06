@@ -8,8 +8,9 @@
 
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Manage Customers</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
     <%@include file="component/allCss.jsp"%>   
     
@@ -30,7 +31,7 @@
                     <th>ID</th><th>Full Name</th><th>Address</th><th>NIC (National ID)</th><th>Phone Number</th><th>Email</th><th>Password</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody>                
                 <%-- Retrieve customers from database (Servlet needed) --%>
             </tbody>
         </table>
