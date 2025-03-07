@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
@@ -40,6 +40,7 @@
                 </tr>
             </thead>
             <tbody>
+                
                 <%
                     Connection con = null;
                     Statement stmt = null;
@@ -52,6 +53,7 @@
 
                         while (rs.next()) {
                 %>
+                
                 <tr>
                     <td><%= rs.getInt("id") %></td>
                     <td><%= rs.getString("name") %></td>
@@ -72,6 +74,7 @@
                         <a href="DeleteBookingServlet?bookingId=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Cancel</a>
                     </td>
                 </tr>
+                
                 <%
                         }
                     } catch (Exception e) {
@@ -83,6 +86,7 @@
                         if (con != null) con.close();
                     }
                 %>
+                
             </tbody>
         </table>
     </div>
