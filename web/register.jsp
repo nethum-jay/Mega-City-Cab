@@ -49,13 +49,12 @@
                             <label class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
+                        
                         <div class="text-center">
                         <button type="submit" class="btn btn-primary">Register</button>
                         </div>
                     </form>
                 </div>
-        
-        
             
         <%@include file="component/footer.jsp"%> 
         

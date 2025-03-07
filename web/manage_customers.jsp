@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,7 +32,47 @@
                 </tr>
             </thead>
             <tbody>                
-                <%-- Retrieve customers from database (Servlet needed) --%>
+
+                
+                <%
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
+
+                        String query = "SELECT name, address, nic, phone, email, password) VALUES (?, ?, ?, ?, ?, ?";
+                        PreparedStatement pst = con.prepareStatement(query);
+                        ResultSet rs = pst.executeQuery();
+
+                        while (rs.next()) {
+                %>
+                
+                <tr>
+                    <td><%= rs.getInt("name") %></td>
+                    <td><%= rs.getString("address") %></td>
+                    <td><%= rs.getString("nic") %></td>
+                    <td><%= rs.getString("phone") %></td>
+                    <td><%= rs.getString("email") %></td>
+                    <td><%= rs.getString("password") %></td>
+                    <td>
+                        <% if (rs.getString("status").equals("Completed")) { %>
+                            <span class="badge bg-success">Completed</span>
+                        <% } else if (rs.getString("status").equals("Upcoming")) { %>
+                            <span class="badge bg-primary">Upcoming</span>
+                        <% } else { %>
+                            <span class="badge bg-danger">Canceled</span>
+                        <% } %>
+                    </td>
+                </tr>
+                
+                <%
+                        }
+                        con.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
+                
+                
             </tbody>
         </table>
     </div>

@@ -1,9 +1,13 @@
-<nav class=" text-center navbar navbar-expand-lg navbar navbar-dark bg-dark p-2">
-    <!--<nav class="navbar navbar-dark bg-dark">-->
-<!--        <div class="container-fluid">-->
-<!--            <span class="navbar-brand">-->
+<nav class="navbar text-center text-dark navbar-expand-lg navbar bg-warning p-2">
     <img src="img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-               <div class="mx-auto" style="width: 700px;"> <h1 class="mb-2 bg-dark text-white"> Mega City Cab </h1>></div>
+               <div class="mx-auto" style="width: 700px;">
+                   <h1 class="mb-2 bg-warning text-dark">
+                          <a class="nav-link" href="index.jsp">
+                            Mega City Cab <span class="sr-only">(current)</span>
+                          </a>
+                        </li>   
+                   </h1>
+               </div>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,11 +15,6 @@
   
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-        
-      <li class="nav-item active">
-        <a class="nav-link" href="index.jsp"><i class="fa-duotone fa-solid fa-house fa-2xl"></i>  
-           Home <span class="sr-only">(current)</span></a>
-      </li>
       
       <li class="nav-item active">
         <a class="nav-link "href="booking.jsp "><i class="fa-solid fa-table-list fa-2xl"></i>
