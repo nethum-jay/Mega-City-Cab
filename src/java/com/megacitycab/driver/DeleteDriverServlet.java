@@ -15,7 +15,7 @@ public class DeleteDriverServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "admin");
             String query = "DELETE FROM Drivers WHERE id=?";
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setInt(1, driverId);
