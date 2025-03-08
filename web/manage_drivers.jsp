@@ -5,7 +5,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.*, jakarta.servlet.*, jakarta.servlet.http.*" %>
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 
 <html>
@@ -38,7 +38,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "admin");
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery("SELECT * FROM Drivers");
 

@@ -6,64 +6,64 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
+<%@ page import="java.sql.*" %>
+
+<%
+    HttpSession sessionObj = request.getSession(false);
+    if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
+        response.sendRedirect("admin_login.jsp");
+        return;
+    }
+%>
+
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Manage Customers</title>
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
-    <%@include file="component/allCss.jsp"%>   
+    <%@include file="component/allCss.jsp"%>     
     
-    
-</head>
 <body>
+    
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand">Manage Customers</span>
-            <a href="admin_dashboard.jsp" class="btn btn-secondary">Back</a>
-        </div>
-    </nav>
-
+      <div class="container-fluid">
+          <span class="navbar-brand">Manage Customers</span>
+          <a href="admin_dashboard.jsp" class="btn btn-secondary">Back</a>
+      </div>  
+     </nav>
+    
     <div class="container mt-4">
-        <table class="table table-bordered">
-            <thead>
+        <h2 class="text-center">Manage Customers</h2>
+    
+        <table class="table table-striped">
+            <thead class="table-dark">
                 <tr>
-                    <th>ID</th><th>Full Name</th><th>Address</th><th>NIC (National ID)</th><th>Phone Number</th><th>Email</th><th>Password</th>
+                    <th>ID</th> <th>Name</th> <th>Address</th> <th>NIC</th> <th>Phone</th> <th>Email</th> <th>Action</th>
                 </tr>
             </thead>
-            <tbody>                
-
-                
+            <tbody>
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
-
-                        String query = "SELECT name, address, nic, phone, email, password) VALUES (?, ?, ?, ?, ?, ?";
-                        PreparedStatement pst = con.prepareStatement(query);
-                        ResultSet rs = pst.executeQuery();
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "admin");
+                        Statement st = con.createStatement();
+                        ResultSet rs = st.executeQuery("SELECT * FROM customers");
 
                         while (rs.next()) {
                 %>
-                
                 <tr>
-                    <td><%= rs.getInt("name") %></td>
+                    <td><%= rs.getInt("id") %></td>
+                    <td><%= rs.getString("name") %></td>
                     <td><%= rs.getString("address") %></td>
                     <td><%= rs.getString("nic") %></td>
                     <td><%= rs.getString("phone") %></td>
                     <td><%= rs.getString("email") %></td>
-                    <td><%= rs.getString("password") %></td>
                     <td>
-                        <% if (rs.getString("status").equals("Completed")) { %>
-                            <span class="badge bg-success">Completed</span>
-                        <% } else if (rs.getString("status").equals("Upcoming")) { %>
-                            <span class="badge bg-primary">Upcoming</span>
-                        <% } else { %>
-                            <span class="badge bg-danger">Canceled</span>
-                        <% } %>
+                        <a href="delete_customer.jsp?id=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm">Delete</a>
                     </td>
                 </tr>
-                
                 <%
                         }
                         con.close();
@@ -71,8 +71,6 @@
                         e.printStackTrace();
                     }
                 %>
-                
-                
             </tbody>
         </table>
     </div>
