@@ -40,8 +40,7 @@
         
         <table class="table table-bordered table-hover mt-3">
             <thead class="table-dark">
-                <tr>
-                    <th>Driver ID</th>
+
                     <th>Name</th>
                     <th>License Number</th>
                     <th>Experience</th>

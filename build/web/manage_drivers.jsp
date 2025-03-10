@@ -26,61 +26,37 @@
 
     <div class="container mt-4">
         <h2 class="text-center">Driver Management</h2>
-
-        <%-- Display Drivers from Database --%>
-        <table class="table table-bordered mt-4">
-            <thead class="table-dark">
-                <tr>
-                    <th>ID</th><th>Name</th><th>Phone</th><th>License No</th><th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%
-                    try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "admin");
-                        Statement stmt = con.createStatement();
-                        ResultSet rs = stmt.executeQuery("SELECT * FROM Drivers");
-
-                        while (rs.next()) {
-                %>
-                <tr>
-                    <td><%= rs.getInt("id") %></td>
-                    <td><%= rs.getString("name") %></td>
-                    <td><%= rs.getString("phone") %></td>
-                    <td><%= rs.getString("license_no") %></td>
-                    <td>
-                        <a href="edit_driver.jsp?id=<%= rs.getInt("id") %>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="DeleteDriverServlet?id=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
-                </tr>
-                <%
-                        }
-                        con.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                %>
-            </tbody>
-        </table>
+        
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
 
         <%-- Add New Driver Form --%>
         <h3 class="mt-4">Add New Driver</h3>
-        <form action="AddDriverServlet" method="post" class="border p-3">
+        <form action="DriverServlet" method="post" class="p-4 bg-white shadow rounded">
             <div class="mb-3">
                 <label>Name:</label>
                 <input type="text" name="name" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Phone:</label>
-                <input type="text" name="phone" class="form-control" required>
-            </div>
-            <div class="mb-3">
                 <label>License Number:</label>
                 <input type="text" name="license_no" class="form-control" required>
             </div>
+            <div class="mb-3">
+                <label>Experience :</label>
+                <input type="int" name="experience" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Contact:</label>
+                <input type="text" name="contact" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Availability:</label>
+                <input type="text" name="availability" class="form-control" required>
+            </div>
+
             <button type="submit" class="btn btn-primary">Add Driver</button>
         </form>
+    </div>
     </div>
         <%@include file="component/footer.jsp" %>
 </body>

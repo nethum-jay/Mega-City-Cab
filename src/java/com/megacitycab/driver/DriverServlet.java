@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
+@WebServlet("/DriverServlet")
 public class DriverServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -36,10 +36,10 @@ public class DriverServlet extends HttpServlet {
             pst.executeUpdate();
 
             con.close();
-            response.sendRedirect("drivers.jsp?message=Driver added successfully!");
+            response.sendRedirect("manage_drivers.jsp?message=Driver added successfully!");
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("drivers.jsp?message=Error adding driver.");
+            response.sendRedirect("manage_drivers.jsp?message=Error adding driver.");
         }
     }
 }
