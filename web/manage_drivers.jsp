@@ -82,5 +82,6 @@
             <button type="submit" class="btn btn-primary">Add Driver</button>
         </form>
     </div>
+        <%@include file="component/footer.jsp" %>
 </body>
 </html>

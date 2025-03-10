@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/booking.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/index.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/BookingServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/component/allCss.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/auth/LoginServlet.java</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/component/navabr.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/img/logo1.png</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_dashboard.jsp</file>
+            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_login.jsp</file>
         </group>
     </open-files>
 </project-private>
