@@ -17,7 +17,7 @@ public class DriverServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        String licenseNumber = request.getParameter("licenseNumber");
+        String licenseNumber = request.getParameter("license_number");
         int experience = Integer.parseInt(request.getParameter("experience"));
         String contact = request.getParameter("contact");
         String availability = request.getParameter("availability");

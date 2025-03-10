@@ -54,7 +54,9 @@
                 <input type="text" name="availability" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Driver</button>
+            <div class="text-center">
+               <button type="submit" class="btn btn-secondary">Book Now</button>
+            </div>
         </form>
     </div>
     </div>

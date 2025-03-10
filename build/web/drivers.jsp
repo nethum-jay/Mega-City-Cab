@@ -5,7 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %> 
+
 <%
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
@@ -55,7 +56,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "password");
+                        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
 
                         String query = "SELECT id, name, license_number, experience, contact, availability FROM drivers";
                         PreparedStatement pst = con.prepareStatement(query);
