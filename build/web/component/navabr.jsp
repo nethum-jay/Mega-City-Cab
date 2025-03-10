@@ -1,5 +1,5 @@
 <nav class="navbar text-center text-dark navbar-expand-lg navbar bg-warning p-2">
-    <img src="img/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+    <img src="img/logo.png" width="100" height="75" class="d-inline-block align-top" alt="">
                <div class="mx-auto" style="width: 700px;">
                    <h1 class="mb-2 bg-warning text-dark">
                           <a class="nav-link" href="index.jsp">
@@ -49,7 +49,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
         <a href="login.jsp" class="btn btn-success"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-        <a href="register.jsp" class="btn btn-danger ml-2"><i class="fa-solid fa-registered"></i> Register</a>
+        <a href="register.jsp" class="btn btn-danger ml-3"><i class="fa-solid fa-registered"></i> Register</a>
     </form>
     </div>
   </div>

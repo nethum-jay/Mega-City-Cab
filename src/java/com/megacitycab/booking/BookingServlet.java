@@ -1,4 +1,4 @@
-package com.megacitycab.booking;
+package com.megacitycab.booking; 
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 
 @WebServlet("/BookingServlet")
 public class BookingServlet extends HttpServlet {

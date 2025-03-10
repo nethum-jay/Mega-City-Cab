@@ -5,8 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 <%@ page import="java.sql.*" %>
+
+<%
+    HttpSession sessionObj = request.getSession(false);
+    if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
+        response.sendRedirect("admin_login.jsp");
+        return;
+    }
+%>
+
 
 <html>
 <head>
@@ -91,6 +100,5 @@
             </tbody>
         </table>
     </div>
-
 </body>
 </html>

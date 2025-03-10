@@ -1,10 +1,4 @@
-<%-- 
-    Document   : viewContact
-    Created on : Feb 21, 2025, 11:11:11 PM
-    Author     : njaya
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+"<%@page contentType="text/html" pageEncoding="UTF-8"%> 
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <%
@@ -75,5 +69,6 @@
             </div>
         </div>
     </div>
+    <%@include file="component/footer.jsp"%> 
 </body>
 </html>

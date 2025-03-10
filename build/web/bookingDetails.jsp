@@ -91,5 +91,6 @@
             <a href="index.jsp" class="btn btn-secondary">Back to Dashboard</a>
         </div>
     </div>
+    <%@include file="component/footer.jsp"%> 
 </body>
 </html>
