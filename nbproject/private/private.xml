@@ -2,36 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/help.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_dashboard.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/component/navabr.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/delete_customer.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/booking.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/driver/AddDriverServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/admin_login.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/bill.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/bookingDetails.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/cars.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/drivers.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/index.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/login.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/manage_bookings.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/manage_customers.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/manage_drivers.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/register.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/web/registerSuccess.jsp</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/Booking.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/BookingServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/UpdateBookingServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/booking/DeleteBookingServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/car/CarServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/customer/Customer.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/customer/CustomerRegistrationServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/customer/DeleteCustomerServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/driver/DeleteDriverServlet.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/driver/Driver.java</file>
-            <file>file:/C:/Users/njaya/OneDrive/Documents/NetBeansProjects/MegaCityCabService/src/java/com/megacitycab/driver/DriverServlet.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
