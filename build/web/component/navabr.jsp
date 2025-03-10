@@ -1,5 +1,5 @@
 <nav class="navbar text-center text-dark navbar-expand-lg navbar bg-warning p-2">
-    <img src="img/logo.png" width="100" height="75" class="d-inline-block align-top" alt="">
+    <img src="" width="100" height="75" class="d-inline-block align-top" alt="">
                <div class="mx-auto" style="width: 700px;">
                    <h1 class="mb-2 bg-warning text-dark">
                           <a class="nav-link" href="index.jsp">
