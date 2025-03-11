@@ -4,8 +4,9 @@
     Author     : njaya
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -55,7 +56,7 @@
             </div>
 
             <div class="text-center">
-               <button type="submit" class="btn btn-secondary">Book Now</button>
+               <button type="submit" class="btn btn-secondary">Adding</button>
             </div>
         </form>
     </div>

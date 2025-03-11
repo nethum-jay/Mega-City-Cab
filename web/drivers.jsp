@@ -5,15 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %> 
+<%@ page import="java.sql.*" %>
+<%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
-        response.sendRedirect("login.jsp?error=Please login first");
+        response.sendRedirect("admin_login.jsp?error=Please login first");
     }
-
-    String userRole = (String) sessionObj.getAttribute("userRole"); // "customer" or "manager"
+    
+    String userEmail = (String) sessionObj.getAttribute("userEmail");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +34,7 @@
         <h2 class="text-center">Available Drivers</h2>
         <p class="text-center text-muted">View the available drivers in Mega City Cab.</p>
 
-        <% if ("manager".equals(userRole)) { %>
+        <% if ("manager".equals(userEmail)) { %>
             <div class="text-end">
                 <a href="addDriver.jsp" class="btn btn-primary">+ Add New Driver</a>
             </div>
@@ -47,7 +48,7 @@
                     <th>Experience</th>
                     <th>Contact</th>
                     <th>Availability</th>
-                    <% if ("manager".equals(userRole)) { %>
+                    <% if ("manager".equals(userEmail)) { %>
                         <th>Actions</th>
                     <% } %>
                 </tr>
@@ -77,7 +78,7 @@
                             <span class="badge bg-danger">Unavailable</span>
                         <% } %>
                     </td>
-                    <% if ("manager".equals(userRole)) { %>
+                    <% if ("manager".equals(userEmail)) { %>
                         <td>
                             <a href="editDriver.jsp?id=<%= rs.getInt("id") %>" class="btn btn-warning btn-sm">Edit</a>
                             <a href="deleteDriverServlet?id=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this driver?')">Delete</a>
