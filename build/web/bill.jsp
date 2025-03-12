@@ -30,10 +30,9 @@
         }
     </script>
 </head>
-   <%@include file="component/navabr.jsp" %>
-<body class="container mt-4">
-
- 
+<body>
+        <%@include file="component/navabr.jsp" %>
+    <div class="container mt-4">
     <h2 class="text-center">Booking Details Bill</h2>
     <table class="table table-bordered text-center">
         <thead class="table-dark">
@@ -84,6 +83,7 @@
         <button class="btn btn-primary" onclick="printBill()">Print Bill</button>
         <a href="index.jsp" class="btn btn-secondary">Back</a>
     </div>
+  </div>
             <%@include file="component/footer.jsp" %>
 
 </body>

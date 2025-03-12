@@ -1,6 +1,8 @@
+package com.megacitycab.servlets;
+
+import com.megacitycab.utils.DBConnection;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,22 +14,35 @@ import jakarta.servlet.http.HttpServletResponse;
 public class AddDriverServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
-        String phone = request.getParameter("phone");
         String licenseNo = request.getParameter("license_no");
+        String experienceStr = request.getParameter("experience");
+        String contact = request.getParameter("contact");
+        String availability = request.getParameter("availability");
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mega_city_cab", "root", "admin");
-            String query = "INSERT INTO Drivers (name, phone, license_no) VALUES (?, ?, ?)";
+            int experience = Integer.parseInt(experienceStr); // Convert experience to integer
+
+            // Get DB Connection
+            Connection con = DBConnection.getConnection();
+            
+            // Insert Driver Details
+            String query = "INSERT INTO drivers (name, license_number, experience, contact, availability) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, name);
-            pstmt.setString(2, phone);
-            pstmt.setString(3, licenseNo);
+            pstmt.setString(2, licenseNo);
+            pstmt.setInt(3, experience);
+            pstmt.setString(4, contact);
+            pstmt.setString(5, availability);
+
             pstmt.executeUpdate();
             con.close();
+
+            response.sendRedirect("manage_drivers.jsp?success=1"); // Redirect with success message
+        } catch (NumberFormatException e) {
+            response.sendRedirect("manage_drivers.jsp?error=Invalid experience format");
         } catch (Exception e) {
             e.printStackTrace();
+            response.sendRedirect("manage_drivers.jsp?error=Database error");
         }
-        response.sendRedirect("manage_drivers.jsp");
     }
 }

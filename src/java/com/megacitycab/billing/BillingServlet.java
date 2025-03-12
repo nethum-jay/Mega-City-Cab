@@ -31,7 +31,7 @@ public class BillingServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "admin");
 
             String query = "INSERT INTO billing (booking_id, user_email, distance, base_fare, tax, discount, total_fare) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = con.prepareStatement(query);
