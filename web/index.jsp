@@ -8,45 +8,57 @@
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | Mega City Cab</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <%@include file="component/allCss.jsp"%>
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .dashboard-container {
+            margin-top: 50px;
+        }
+        .card-custom {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-custom:hover {
+            transform: scale(1.05);
+        }
+        .footer-section {
+            background: #343a40;
+            color: white;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
 
+    <!-- Navbar -->
+    <%@include file="component/navbar.jsp" %>
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Dashboard</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        
-        <%@include file="component/allCss.jsp"%>
-        
-        <style type="text/css">
-            
-/*            .back-img{
-                background: url(img/background.jpg);
-                width: 100%;
-                height:80vh;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 100%;
-            }
-            */
-        </style>
-      
-    </head>
-    <body>
-        <%@include file="component/navabr.jsp" %>
-        
-    <div class="text-center text-danger text-success" style="margin-top: 250px">
-        <h1 class="mt-5" >Welcome to Mega City Cab</h1>
-        <p>Use the navigation bar to access features.</p>
-    </div>
-        
+    <div class="container dashboard-container text-center">
+        <h1 class="mt-4 text-primary">Welcome to Mega City Cab</h1>
+        <p class="text-muted">Use the navigation options below to access system features.</p>
 
-         <div class="row mt-4">
-            <!-- Book a Ride -->
+        <!-- Feature Cards -->
+        <div class="row mt-4">
+            <!-- Book a Cab -->
             <div class="col-md-4">
-                <div class="p-4 bg-white shadow rounded">
+                <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
-                        <i class="fa-solid fa-table-list fa-2xl"></i>
+                        <i class="fa-solid fa-taxi fa-3x text-primary mb-3"></i>
                         <h5 class="card-title">Book a Cab</h5>
                         <p class="card-text">Reserve your ride in a few clicks.</p>
                         <a href="booking.jsp" class="btn btn-primary">Book Now</a>
@@ -56,11 +68,11 @@
 
             <!-- View Bookings -->
             <div class="col-md-4">
-                <div class="p-4 bg-white shadow rounded">
+                <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
-                        <i class="fa-solid fa-eye fa-2xl"></i>                        
+                        <i class="fa-solid fa-calendar-check fa-3x text-success mb-3"></i>
                         <h5 class="card-title">My Bookings</h5>
-                        <p class="card-text">Check the status of your cab bookings.</p>
+                        <p class="card-text">Check your booking status and details.</p>
                         <a href="bookingDetails.jsp" class="btn btn-success">View Bookings</a>
                     </div>
                 </div>
@@ -68,9 +80,9 @@
 
             <!-- Billing -->
             <div class="col-md-4">
-                <div class="p-4 bg-white shadow rounded">
+                <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
-                        <i class="fa-solid fa-file-invoice fa-2xl"></i>
+                        <i class="fa-solid fa-file-invoice-dollar fa-3x text-warning mb-3"></i>
                         <h5 class="card-title">Billing</h5>
                         <p class="card-text">View and print your ride invoices.</p>
                         <a href="bill.jsp" class="btn btn-warning">View Bill</a>
@@ -79,12 +91,13 @@
             </div>
         </div>
 
-        <!-- Help Section -->
+        <!-- Help & Logout -->
         <div class="row mt-4">
+            <!-- Help Section -->
             <div class="col-md-6">
-                <div class="p-4 bg-white shadow rounded">
+                <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
-                        <i class="fa-brands fa-hire-a-helper fa-2xl"></i>
+                        <i class="fa-solid fa-circle-info fa-3x text-info mb-3"></i>
                         <h5 class="card-title">Help & Support</h5>
                         <p class="card-text">Need assistance? Find help here.</p>
                         <a href="help.jsp" class="btn btn-info">Get Help</a>
@@ -94,9 +107,9 @@
 
             <!-- Logout -->
             <div class="col-md-6">
-                <div class="p-4 bg-white shadow rounded">
+                <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
-                        <i class="fa-solid fa-arrow-right-from-bracket fa-2xl"></i>
+                        <i class="fa-solid fa-sign-out-alt fa-3x text-danger mb-3"></i>
                         <h5 class="card-title">Logout</h5>
                         <p class="card-text">Sign out of your account securely.</p>
                         <a href="LogoutServlet" class="btn btn-danger">Logout</a>
@@ -104,17 +117,21 @@
                 </div>
             </div>
         </div>
-        
-            <div class="accordion-item card text-center card- card-footer text-muted p-5" style="margin-top: 100px">
-                <h2 class="accordion-header card-body card-title">
-                        📞 Contact Support
-                </h2>
-                    <li>📧 Email: support@megacitycab.com</li>
-                    <li>📞 Phone: +94 112 687 189</li>
-                    <li>🏢 Visit: Mega City Cab, Colombo 01, Sri Lanka</li>
-            </div>
+
+        <!-- Contact Support -->
+        <div class="footer-section text-center mt-5">
+            <h5 class="mb-3">📞 Contact Support</h5>
+            <p><i class="fa-solid fa-envelope"></i> Email: support@megacitycab.com</p>
+            <p><i class="fa-solid fa-phone"></i> Phone: +94 112 687 189</p>
+            <p><i class="fa-solid fa-map-marker-alt"></i> Visit: Mega City Cab, Colombo 01, Sri Lanka</p>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-        <%@include file="component/footer.jsp" %>
-        
-    </body>
+    <%@include file="component/footer.jsp" %>
+
+</body>
 </html>

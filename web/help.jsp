@@ -10,21 +10,44 @@
 <%
     HttpSession sessionObj = request.getSession(false);
 %>
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Help</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-        <%@include file="component/allCss.jsp"%>
-        
-    </head>
-    <body>
-        
-        <%@include file="component/navabr.jsp" %>
-        
-        <div class="container mt-4">
-        <h2 class="text-center">Help & Support</h2>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Help & Support | Mega City Cab</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <%@include file="component/allCss.jsp"%>
+
+    <style>
+        .accordion-button {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .accordion-body ul {
+            padding-left: 20px;
+        }
+        .accordion-body ul li {
+            margin-bottom: 8px;
+        }
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <%@include file="component/navbar.jsp" %>
+
+    <div class="container mt-5">
+        <h2 class="text-center text-primary">Help & Support</h2>
         <p class="text-center text-muted">Need assistance? Find answers below.</p>
 
         <div class="accordion" id="helpAccordion">
@@ -38,9 +61,9 @@
                 <div id="registerLogin" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>New users must register by providing their **name, address, NIC, and contact details**.</li>
-                            <li>Use your registered **email and password** to log in.</li>
-                            <li>If you **forget your password**, use the "Forgot Password" option.</li>
+                            <li>New users must register by providing their <strong>name, address, NIC, and contact details</strong>.</li>
+                            <li>Use your registered <strong>email and password</strong> to log in.</li>
+                            <li>If you <strong>forget your password</strong>, use the "Forgot Password" option.</li>
                         </ul>
                     </div>
                 </div>
@@ -56,10 +79,10 @@
                 <div id="booking" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>Go to the **"Book a Cab"** page.</li>
-                            <li>Select **pickup location, destination, date, and time**.</li>
-                            <li>Choose your preferred **car type** and **driver**.</li>
-                            <li>Confirm the booking, and you will receive a **booking number**.</li>
+                            <li>Go to the <strong>"Book a Cab"</strong> page.</li>
+                            <li>Select <strong>pickup location, destination, date, and time</strong>.</li>
+                            <li>Choose your preferred <strong>car type</strong> and <strong>driver</strong>.</li>
+                            <li>Confirm the booking, and you will receive a <strong>booking number</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -75,9 +98,9 @@
                 <div id="billing" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>The fare is calculated based on **distance, vehicle type, and any discounts**.</li>
-                            <li>Customers can pay via **Cash, Credit Card, or Online Payment**.</li>
-                            <li>View your past bills in the **"My Bookings"** section.</li>
+                            <li>The fare is calculated based on <strong>distance, vehicle type, and any discounts</strong>.</li>
+                            <li>Customers can pay via <strong>Cash, Credit Card, or Online Payment</strong>.</li>
+                            <li>View your past bills in the <strong>"My Bookings"</strong> section.</li>
                         </ul>
                     </div>
                 </div>
@@ -93,9 +116,9 @@
                 <div id="management" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
                     <div class="accordion-body">
                         <ul>
-                            <li>Managers can **add, update, and remove cars**.</li>
-                            <li>Drivers can be **assigned to bookings**.</li>
-                            <li>Track car availability and **update vehicle status**.</li>
+                            <li>Managers can <strong>add, update, and remove cars</strong>.</li>
+                            <li>Drivers can be <strong>assigned to bookings</strong>.</li>
+                            <li>Track car availability and <strong>update vehicle status</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -110,12 +133,14 @@
                 </h2>
                 <div id="support" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
                     <div class="accordion-body">
-                        <p>If you need further help, contact us:</p>
-                        <ul>
-                            <li>📧 Email: support@megacitycab.com</li>
-                            <li>📞 Phone: +94 112 687 189</li>
-                            <li>🏢 Visit: Mega City Cab, Colombo 01, Sri Lanka</li>
-                        </ul>
+                        <div class="contact-section text-center">
+                            <p class="fw-bold">If you need further help, contact us:</p>
+                            <ul class="list-unstyled">
+                                <li>📧 <strong>Email:</strong> <a href="mailto:support@megacitycab.com">support@megacitycab.com</a></li>
+                                <li>📞 <strong>Phone:</strong> <a href="tel:+94112687189">+94 112 687 189</a></li>
+                                <li>🏢 <strong>Visit:</strong> Mega City Cab, Colombo 01, Sri Lanka</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,7 +151,9 @@
         </div>
     </div>
 
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <%@include file="component/footer.jsp" %>
 </body>
 </html>
