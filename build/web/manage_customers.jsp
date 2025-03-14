@@ -7,14 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
-<%
-    HttpSession sessionObj = request.getSession(false);
-    if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
-        response.sendRedirect("admin_login.jsp?error=Please login first");
-        return;
-    }
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +49,22 @@
     <div class="container">
         <h2 class="text-center text-primary mb-4">All Registered Customers</h2>
 
+        <!-- Display Success or Error Messages -->
+        <%
+            String message = request.getParameter("message");
+            String error = request.getParameter("error");
+            if (message != null) {
+        %>
+            <div class="alert alert-success text-center"><%= message %></div>
+        <% 
+            }
+            if (error != null) {
+        %>
+            <div class="alert alert-danger text-center"><%= error %></div>
+        <% 
+            }
+        %>
+
         <div class="table-responsive">
             <table class="table table-hover table-striped">
                 <thead class="table-dark">
@@ -74,7 +82,7 @@
                 
                 <%
                     // Database Connection & Query Execution
-                    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "admin");
+                    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
                          PreparedStatement pst = con.prepareStatement("SELECT id, name, address, nic, phone, email FROM customers");
                          ResultSet rs = pst.executeQuery()) {
 
@@ -90,7 +98,8 @@
                     <td><%= rs.getString("email") %></td>
                     <td>
                         <!-- Delete Customer -->
-                        <a href="DeleteCustomerServlet?customerId=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this customer?');">
+                        <a href="DeleteCustomerServlet?id=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" 
+                           onclick="return confirm('Are you sure you want to delete this customer?');">
                             <i class="fa-solid fa-trash"></i> Delete
                         </a>
                     </td>
@@ -106,4 +115,8 @@
                 
                 </tbody>
             </table>
-        </div
+        </div>
+    </div>
+
+</body>
+</html>
