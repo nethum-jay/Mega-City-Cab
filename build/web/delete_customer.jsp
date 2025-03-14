@@ -9,14 +9,12 @@
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
 <%
-    // Check if admin is logged in
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
         response.sendRedirect("admin_login.jsp");
         return;
     }
 
-    // Get the customer ID from the request
     String customerId = request.getParameter("id");
 
     if (customerId != null) {
@@ -24,7 +22,6 @@
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MegaCityCab", "root", "password");
 
-            // Prepare delete statement
             PreparedStatement ps = con.prepareStatement("DELETE FROM customers WHERE customer_id = ?");
             ps.setInt(1, Integer.parseInt(customerId));
             int rowsAffected = ps.executeUpdate();

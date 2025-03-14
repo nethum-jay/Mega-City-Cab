@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Help & Support | Mega City Cab</title>
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
     <%@include file="component/allCss.jsp"%>
@@ -51,7 +51,6 @@
         <p class="text-center text-muted">Need assistance? Find answers below.</p>
 
         <div class="accordion" id="helpAccordion">
-            <%-- Section 1: User Registration & Login --%>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#registerLogin">
@@ -69,7 +68,6 @@
                 </div>
             </div>
 
-            <%-- Section 2: Booking a Cab --%>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking">
@@ -88,7 +86,6 @@
                 </div>
             </div>
 
-            <%-- Section 3: Billing & Payments --%>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#billing">
@@ -106,7 +103,6 @@
                 </div>
             </div>
 
-            <%-- Section 4: Managing Cars & Drivers (Manager) --%>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#management">
@@ -124,7 +120,6 @@
                 </div>
             </div>
 
-            <%-- Section 5: Contact Support --%>
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#support">
@@ -151,7 +146,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <%@include file="component/footer.jsp" %>

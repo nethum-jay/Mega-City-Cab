@@ -8,7 +8,6 @@
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%
-    // Validate user session
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
         response.sendRedirect("login.jsp?error=Please+login+first");

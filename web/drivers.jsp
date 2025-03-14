@@ -8,14 +8,14 @@
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%
-    // Validate session and ensure user is logged in
+
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
         response.sendRedirect("login.jsp?error=Please+login+first");
         return;
     }
     String userEmail = (String) sessionObj.getAttribute("userEmail");
-    // Retrieve user role from session for authorization check
+    
     String userRole = (String) sessionObj.getAttribute("userRole");
 %>
 

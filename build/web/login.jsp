@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Customer Login | Mega City Cab</title>
 
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
     <%@include file="component/allCss.jsp"%>
@@ -39,7 +39,7 @@
         <div class="login-container p-4 bg-white shadow rounded">
             <h2 class="text-center text-primary">Customer Login</h2>
 
-            <%-- Display error message if login fails --%>
+
             <% String error = request.getParameter("error"); %>
             <% if (error != null) { %>
                 <div class="alert alert-danger text-center"><%= error %></div>
@@ -71,7 +71,7 @@
 
     <%@include file="component/footer.jsp"%>  
 
-    <!-- Bootstrap Icons -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </body>
 </html>

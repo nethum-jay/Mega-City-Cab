@@ -14,10 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Customers | Mega City Cab</title>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <%@include file="component/allCss.jsp"%>
@@ -38,7 +36,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Customers</span>
@@ -49,7 +46,6 @@
     <div class="container">
         <h2 class="text-center text-primary mb-4">All Registered Customers</h2>
 
-        <!-- Display Success or Error Messages -->
         <%
             String message = request.getParameter("message");
             String error = request.getParameter("error");
@@ -81,7 +77,6 @@
                 <tbody>
                 
                 <%
-                    // Database Connection & Query Execution
                     try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
                          PreparedStatement pst = con.prepareStatement("SELECT id, name, address, nic, phone, email FROM customers");
                          ResultSet rs = pst.executeQuery()) {
@@ -97,7 +92,6 @@
                     <td><%= rs.getString("phone") %></td>
                     <td><%= rs.getString("email") %></td>
                     <td>
-                        <!-- Delete Customer -->
                         <a href="DeleteCustomerServlet?id=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" 
                            onclick="return confirm('Are you sure you want to delete this customer?');">
                             <i class="fa-solid fa-trash"></i> Delete

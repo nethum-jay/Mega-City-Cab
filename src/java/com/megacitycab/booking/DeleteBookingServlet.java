@@ -36,10 +36,8 @@ public class DeleteBookingServlet extends HttpServlet {
         String phone = request.getParameter("phone");
 
         try {
-            // Database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Insert booking details
             String query = "INSERT INTO bookings (user_email, pickup, dropoff, pickup_time, vehicle_type, phone) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1, userEmail);

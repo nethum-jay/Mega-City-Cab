@@ -13,7 +13,7 @@ public class DeleteCustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idParam = request.getParameter("id");
 
-        // Validate if ID is provided
+
         if (idParam == null || idParam.isEmpty()) {
             response.sendRedirect("manage_customers.jsp?error=Invalid+ID");
             return;
@@ -27,16 +27,13 @@ public class DeleteCustomerServlet extends HttpServlet {
             return;
         }
 
-        // Database connection parameters
         String jdbcURL = "jdbc:mysql://localhost:3306/megacitycab";
         String dbUser = "root";
         String dbPassword = "admin";
 
         try {
-            // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Use try-with-resources to auto-close resources
             try (Connection con = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
                  PreparedStatement ps = con.prepareStatement("DELETE FROM customers WHERE id = ?")) {
 

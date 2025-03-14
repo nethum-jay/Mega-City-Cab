@@ -4,11 +4,12 @@
     Author     : njaya
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, jakarta.servlet.http.HttpSession" %>
 
 <%
-    // Validate user session
+
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("userEmail") == null) {
         response.sendRedirect("login.jsp?error=Please+login+first");
@@ -80,10 +81,10 @@
                         int bookingId = rs.getInt("id");
                         double distance = rs.getDouble("distance");
                         
-                        // Bill Calculation
-                        double baseFare = distance * 2.0; // LKR2 per km
-                        double tax = baseFare * 0.12;       // 12% tax
-                        double discount = (distance > 15) ? baseFare * 0.10 : 0; // 10% discount for >15 km
+                        
+                        double baseFare = distance * 2.0;  
+                        double tax = baseFare * 0.15;      
+                        double discount = (distance > 15) ? baseFare * 0.10 : 0; 
                         double totalFare = baseFare + tax - discount;
                         grandTotal += totalFare;
             %>

@@ -8,7 +8,6 @@
 <%@ page import="jakarta.servlet.http.HttpSession" %>
 
 <%
-    // Validate admin session
     HttpSession sessionObj = request.getSession(false);
     if (sessionObj == null || sessionObj.getAttribute("admin") == null) {
         response.sendRedirect("admin_login.jsp?error=Please+login+first");
@@ -23,10 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Drivers - Admin Panel</title>
 
-    <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
-    <!-- FontAwesome for Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <%@ include file="component/allCss.jsp" %>
@@ -48,7 +45,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Drivers</span>
@@ -56,7 +52,6 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="container mt-4">
         <h2 class="text-center text-primary">Driver Management</h2>
 
@@ -101,10 +96,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <%@ include file="component/footer.jsp" %>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

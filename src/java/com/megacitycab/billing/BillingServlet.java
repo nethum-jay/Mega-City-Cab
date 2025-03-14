@@ -1,4 +1,3 @@
-package com.megacitycab.billing;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,12 +19,12 @@ public class BillingServlet extends HttpServlet {
         int bookingId = Integer.parseInt(request.getParameter("bookingId"));
         double distance = Double.parseDouble(request.getParameter("distance"));
 
-        double baseFare = 5.0; // Fixed base fare
-        double perKmRate = 1.5; // Cost per km
-        double taxRate = 0.1; // 10% tax
-        double discount = distance > 10 ? 5.0 : 0.0; // Discount if distance > 10 km
+        double baseFare = 5.0; 
+        double perKmRate = 1.5; 
+        double discount = distance > 10 ? 5.0 : 0.0; 
 
         double fare = baseFare + (distance * perKmRate);
+        double taxRate = 0;
         double tax = fare * taxRate;
         double totalFare = fare + tax - discount;
 

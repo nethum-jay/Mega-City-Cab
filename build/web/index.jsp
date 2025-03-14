@@ -14,10 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Dashboard | Mega City Cab</title>
     
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     
-    <!-- Font Awesome for Icons -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <%@include file="component/allCss.jsp"%>
@@ -45,16 +44,14 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <%@include file="component/navbar.jsp" %>
 
     <div class="container dashboard-container text-center">
         <h1 class="mt-4 text-primary">Welcome to Mega City Cab</h1>
         <p class="text-muted">Use the navigation options below to access system features.</p>
 
-        <!-- Feature Cards -->
+
         <div class="row mt-4">
-            <!-- Book a Cab -->
             <div class="col-md-4">
                 <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
@@ -66,7 +63,6 @@
                 </div>
             </div>
 
-            <!-- View Bookings -->
             <div class="col-md-4">
                 <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
@@ -78,7 +74,6 @@
                 </div>
             </div>
 
-            <!-- Billing -->
             <div class="col-md-4">
                 <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
@@ -91,9 +86,7 @@
             </div>
         </div>
 
-        <!-- Help & Logout -->
         <div class="row mt-4">
-            <!-- Help Section -->
             <div class="col-md-6">
                 <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
@@ -105,7 +98,6 @@
                 </div>
             </div>
 
-            <!-- Logout -->
             <div class="col-md-6">
                 <div class="card card-custom p-3 shadow-sm">
                     <div class="card-body text-center">
@@ -118,7 +110,6 @@
             </div>
         </div>
 
-        <!-- Contact Support -->
         <div class="footer-section text-center mt-5">
             <h5 class="mb-3">📞 Contact Support</h5>
             <p><i class="fa-solid fa-envelope"></i> Email: support@megacitycab.com</p>
@@ -128,7 +119,6 @@
 
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <%@include file="component/footer.jsp" %>

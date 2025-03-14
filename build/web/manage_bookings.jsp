@@ -14,10 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Bookings | Mega City Cab</title>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <%@include file="component/allCss.jsp"%>
@@ -38,7 +36,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand">Manage Bookings</span>
@@ -65,7 +62,6 @@
                 <tbody>
                 
                 <%
-                    // Database Connection & Query Execution
                     try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megacitycab", "root", "admin");
                          PreparedStatement stmt = con.prepareStatement("SELECT b.id, c.name, b.pickup, b.destination, b.fare, b.status FROM Bookings b JOIN Customers c ON b.customer_id = c.id");
                          ResultSet rs = stmt.executeQuery()) {
@@ -98,7 +94,6 @@
                             </button>
                         </form>
 
-                        <!-- Delete Booking -->
                         <a href="DeleteBookingServlet?bookingId=<%= rs.getInt("id") %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this booking?')">
                             <i class="fa-solid fa-trash"></i> Cancel
                         </a>
@@ -118,10 +113,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <%@include file="component/footer.jsp" %>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
